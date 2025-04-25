@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { WeatherDatas } from 'src/models/interfaces/WeatherDatas.interface';
-import { Subject } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-weather-home',
@@ -26,6 +26,9 @@ export class WeatherHomeComponent implements OnInit, OnDestroy {
 
   getWeatherDatas(cityName: string): void{
     this.weatherService.getWeatherDatas(cityName)
+    .pipe(
+      takeUntil(this.destroy$)
+    )
     .subscribe({
       next: (response) => {
         response && (this.weatherDatas = response);

@@ -10,9 +10,7 @@ import { ConfigService } from 'src/app/config.service';
 export class WeatherService {
   private apiKey = this.configService.apiKey;
 
-  constructor(private http: HttpClient, private configService: ConfigService) {
-    console.log('API Key carregada:', this.apiKey);
-  }
+  constructor(private http: HttpClient, private configService: ConfigService) {}
 
   getWeatherDatas(cityName: string): Observable<any> {
     console.log(this.apiKey);
