@@ -1,4 +1,5 @@
 {
-    "weatherApiKey": "SUA_CHAVE_DE_API"
+    "weatherApiKey": "SUA_CHAVE_DE_API",
+    "defaultCityName": "São Paulo"
 }
   

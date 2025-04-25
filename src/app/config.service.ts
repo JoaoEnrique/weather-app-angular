@@ -24,4 +24,8 @@ export class ConfigService {
   get apiKey(): string {
     return this.config?.weatherApiKey || '';
   }
+
+  get defaultCityName(): string {
+    return this.config?.defaultCityName || 'Salvador';
+  }
 }

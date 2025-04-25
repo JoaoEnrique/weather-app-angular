@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { WeatherDatas } from 'src/models/interfaces/WeatherDatas.interface';
 import { Subject, takeUntil } from 'rxjs';
+import { ConfigService } from 'src/app/config.service';
 
 @Component({
   selector: 'app-weather-home',
@@ -10,10 +11,10 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class WeatherHomeComponent implements OnInit, OnDestroy {
   private readonly destroy$: Subject<void> = new Subject();
-  defaultCityName = "São Paulo";
+  defaultCityName = this.config.defaultCityName;
   weatherDatas!: WeatherDatas;
 
-  constructor(private weatherService: WeatherService){}
+  constructor(private weatherService: WeatherService, private config: ConfigService){}
 
   ngOnInit(): void {
     this.getWeatherDatas(this.defaultCityName);
