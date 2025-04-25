@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
 
+<img width="881" alt="image" src="https://github.com/user-attachments/assets/5b34feef-7207-4516-9215-68ee4bbbb92c" />
+
+
 ## Environments
 src/assets/config.example.json
 ```json
