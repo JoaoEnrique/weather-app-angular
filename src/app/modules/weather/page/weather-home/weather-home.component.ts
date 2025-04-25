@@ -37,4 +37,8 @@ export class WeatherHomeComponent implements OnInit, OnDestroy {
       error: (error) => console.log(error)
     })
   }
+
+  onSubmit(): void {
+    this.getWeatherDatas(this.defaultCityName);
+  }
 }

@@ -1,1 +1,15 @@
-<p>weather-home works!</p>
+<div class="search">
+    <form #form="ngForm" (submit)="onSubmit()">
+        <input type="text" placeholder="Buscar por cidade" name="city" [(ngModel)]="defaultCityName">
+        
+        <span class="search-icon" (click)="onSubmit()">
+            <i class="pi pi-search" style="font-size: 1rem"></i>
+        </span>
+    </form>
+</div>
+
+<span class="loading" *ngIf="!weatherDatas">
+    <i class="pi pi-spin pi-spinner"></i>
+</span>
+
+<app-weather-card *ngIf="weatherDatas" [weatherDatas]="weatherDatas"></app-weather-card>
